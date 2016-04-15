@@ -18,6 +18,13 @@ main {
   color: #db8734;
 }
 
+h1 {
+  background-color: #345257;
+  display: inline-block;
+  padding: 2rem;
+  border-radius: 0.3rem;
+}
+
 a, a:visited {
   color: #789;
   text-decoration: none;
