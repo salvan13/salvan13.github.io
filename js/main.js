@@ -3,7 +3,7 @@ var App = (function() {
   "use strict";
 
   var data = {
-    title: location.hostname
+    title: location.hostname || 'salvan13.github.io'
   };
 
   var container, code, profile, letters, interval;
@@ -49,7 +49,7 @@ var App = (function() {
     write('\n👾 Casual videogame maker/player');
     write('\n❤️‍ Italian 🍕 Japanese 🍙 and Greek food');
     write('\n🎧 Rock Music');
-    write('\n🛡 House Stark Member');
+    write('\n⚔ House Stark Member');
   };
 
   var write = function(txt, cb) {
@@ -88,7 +88,6 @@ var Template = (function() {
     </header>
     <section>
       <pre><code></code></pre>
-      <div class="profile">
       </div>
     </section>
     <footer>
