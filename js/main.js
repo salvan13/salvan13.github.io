@@ -35,20 +35,21 @@ var App = (function() {
     code = document.querySelector('code');
 
     write('Hello, I am Antonio.');
-    write('Thank you for visiting my profile 😄');
+    write('Thank you for visiting my profile 😃');
     write('I am an italian Frontend Engineer,');
     write('🏠 from Napoli ✈️ based in Milan.');
-    write('\nsome coding skills 👷');
-    write('Javascript\t🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠');
-    write('HTML\t\t🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠');
-    write('CSS\t\t🛠🛠🛠🛠🛠🛠🛠🛠🛠');
-    write('Java\t\t🛠🛠🛠🛠🛠🛠🛠🛠🛠');
-    write('SQL\t\t🛠🛠🛠🛠🛠🛠🛠🛠');
-    write('Python\t\t🛠🛠🛠🛠🛠🛠');
-    write('\nlinux user 🐧');
-    write('\ncasual 👾 videogame maker/player');
-    write('\n❤️‍ italian 🍕 japanese 🍙 and greek food');
-    write('\n🎧 rock music');
+    write('\n👷 Some coding skills');
+    write('Javascript\t' + '⭐'.repeat(10));
+    write('HTML\t\t' + '⭐'.repeat(10));
+    write('CSS\t\t' + '⭐'.repeat(9));
+    write('Java\t\t' + '⭐'.repeat(9));
+    write('SQL\t\t' + '⭐'.repeat(8));
+    write('Python\t\t' + '⭐'.repeat(6));
+    write('\n🐧 Linux user');
+    write('\n👾 Casual videogame maker/player');
+    write('\n❤️‍ Italian 🍕 Japanese 🍙 and Greek food');
+    write('\n🎧 Rock Music');
+    write('\n🛡 House Stark Member');
   };
 
   var write = function(txt, cb) {
