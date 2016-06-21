@@ -95,6 +95,7 @@ var Template = (function() {
       <a href="https://github.com/salvan13"><i class="fa fa-github"></i></a>
       <a href="https://linkedin.com/in/antoniosalvati84"><i class="fa fa-linkedin"></i></a>
       <a href="https://stackoverflow.com/users/640815/antonio-salvati"><i class="fa fa-stack-overflow"></i></a>
+      <a href="https://jsfiddle.net/user/salvan13/fiddles/"><i class="fa fa-jsfiddle"></i></a>
     </footer>`
   };
 
