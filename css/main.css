@@ -9,7 +9,7 @@ html, body {
   font: 20px "VT323", monospace, sans-serif;
   background-color: transparent;
   color: #444;
-  background-color: #fff;
+  background-color: #fdfffc;
 }
 
 main {
@@ -29,13 +29,13 @@ footer {
 }
 
 h1 {
-  color: #db8734;
+  color: #e71d36;
   font-size: 2.8rem;
 }
 
 main > * {
   width: 30rem;
-  padding: 1rem;
+  padding: 0.2rem;
 }
 
 main > *:first-child {
@@ -54,7 +54,7 @@ a, a:visited {
 }
 
 a:hover, a:active {
-  color: #db8734;
+  color: #e71d36;
 }
 
 footer a:hover i {
@@ -62,10 +62,10 @@ footer a:hover i {
 }
 
 pre {
-  background-color: #222;
+  background-color: #011627;
   padding: 1rem;
   margin: 1rem 0;
-  color: #fff;
+  color: #fdfffc;
 }
 
 code {
@@ -75,11 +75,11 @@ code {
 
 ::selection {
   color: #fff;
-  background: #db8734;
+  background: #e71d36;
 }
 ::-moz-selection {
   color: #fff;
-  background: #db8734;
+  background: #e71d36;
 }
 
 @media (max-width: 600px) {
