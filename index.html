@@ -2,15 +2,186 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>salvan13.github.io</title>
-    <meta name="description" content="Salvan13 website">
-    <meta name="author" content="Salvan13">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=VT323'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
-    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <style>
+      *, *::before, *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: all 0.5s ease;
+      }
+
+      :root {
+        font-family: 'VT323', monospace;
+        font-size: calc(1vw + 7px);
+        line-height: 150%;
+        background-color: hsl(207, 75%, 5%);
+        color: white;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 1rem;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        font-size: 180%;
+        line-height: 130%;
+      }
+
+      nav li {
+        list-style: none;
+        padding: 1rem;
+      }
+
+      section {
+        opacity: 0;
+      }
+
+      section:target {
+        opacity: 1;
+      }
+
+      section#home {
+        opacity: 1;
+      }
+
+      section:not(#home):not(:target) *,
+      section:target ~ section#home * {
+        display: none;
+      }
+
+      section:target ~ section#home {
+        opacity: 0;
+      }
+
+      main {
+        flex-grow: 1;
+        position: relative;
+        padding: 1rem;
+        min-width: 50vw;
+        background-color: hsl(207, 75%, 15%);
+        text-align: center;
+      }
+
+      h2, p, ul {
+        margin-bottom: 1rem;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      a, a:visited {
+        position: relative;
+        color: hsl(160, 100%, 90%);
+      }
+
+      a::before {
+        content: "\a";
+        display: block;
+        position: absolute;
+        left: -2rem;
+        height: 100%;
+        background-color: hsl(160, 40%, 40%);
+        width: 0.5rem;
+        clip-path: polygon(0 0, 0 0, 0 0);
+        opacity: 0;
+      }
+
+      a:hover::before, a:focus::before {
+        background-color: hsl(76, 100%, 50%);
+        left: -0.8rem;
+        clip-path: polygon(0 50%, 100% 70%, 0% 90%);
+        opacity: 1;
+      }
+
+    </style>
+    <title>Salvan13</title>
   </head>
   <body>
-    <script src="js/main.js"></script>
+    <header>
+      <h1>Hello.</h1>
+    </header>
+    <nav>
+      <li><a href="#">Home</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#games">Games</a></li>
+    </nav>
+    <main>
+      <section id="resources">
+        <h2>Resources</h2>
+        <p>Resources for web development I use / follow / want to share</p>
+        <h3>Newsletter</h3>
+        <ul>
+          <li><a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+          <li><a href="https://frontendfoc.us/">Frontend Focus</a></li>
+          <li><a href="https://nodeweekly.com/">Node Weekly</a></li>
+          <li><a href="http://csslayout.news/">CSS Layout</a></li>
+        </ul>
+        <h3>Blogs</h3>
+        <ul>
+          <li><a href="https://hacks.mozilla.org/">Mozilla Hacks</a></li>
+          <li><a href="http://2ality.com/">2ality – JavaScript and more</a></li>
+        </ul>
+        <h3>Sites</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web">Mozilla Developer Network</a></li>
+          <li><a href="https://css-tricks.com/">CSS tricks</a></li>
+        </ul>
+        <h3>Style guides</h3>
+        <ul>
+          <li><a href="https://github.com/airbnb/javascript">JavaScript style guide</a></li>
+          <li><a href="https://github.com/necolas/idiomatic-css">CSS style guide</a></li>
+          <li><a href="http://a11y-style-guide.com/style-guide/">A11Y style guide</a></li>
+        </ul>
+      </section>
+      <section id="links">
+        <h2>Links</h2>
+        <p>My profiles around the web</p>
+        <ul>
+          <li><a href="https://twitter.com/salvan13">Twitter</a></li>
+          <li><a href="https://github.com/salvan13">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/antoniosalvati84">LinkedIn</a></li>
+          <li><a href="https://jsfiddle.net/user/salvan13/fiddles/">JsFiddle</a></li>
+          <li><a href="https://stackoverflow.com/users/640815/antonio-salvati">Stackoverflow</a></li>
+        </ul>
+      </section>
+      <section id="games">
+        <h2>Games</h2>
+        <p>Small web games I built</p>
+        <ul>
+          <li>2017 - in progress...</li>
+          <li><a href="http://js13kgames.com/entries/breakaway">2013 - Breakaway</a></li>
+          <li><a href="http://js13kgames.com/entries/labyrinth">2012 - Labyrinth</a></li>
+        </ul>
+      </section>
+      <section id="home">
+        <p>
+          hello, I am Antonio<br>
+          thank you for visiting my site 😃<br>
+          🏠 from Napoli currently in Milan 🚂<br>
+          I am a developer 👷<br>
+          I enjoy build web stuff 🌍<br>
+          👾 hobbyist videogame maker / player<br>
+          ❤️‍ italian 🍕 japanese 🍙 and greek food<br>
+          🎧 rock music<br>
+          🛡️ house Stark member<br>
+        </p>
+      </section>
+    </main>
   </body>
 </html>
