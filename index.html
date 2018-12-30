@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <style>
       *, *::before, *::after {
         padding: 0;
@@ -13,20 +12,32 @@
       }
 
       :root {
-        font-family: 'VT323', monospace;
-        font-size: calc(1vw + 17px);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;        font-size: calc(1vw + 17px);
         line-height: 150%;
         background-color: #1d3557;
         color: #f1faee;
         overflow-x: hidden;
+        scrollbar-color: #ffeb00 #1d3557;
+        scrollbar-width: thin;
       }
 
       body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+        display: grid;
         min-height: 100vh;
+        max-width: 20rem;
+        margin: auto;
+      }
+
+      body::after {
+        content: "\a";
+        height: 5.5rem;
+        position: absolute;
+        background-color: #457b9d;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.3;
+        z-index: -100;
       }
 
       header {
@@ -34,70 +45,59 @@
       }
 
       nav {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+        display: block;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(41, 74, 108, 0.92);
       }
 
       nav li {
-        list-style: none;
-        padding: 0.5rem;
+        padding: 0.55rem;
+        font-size: 83%;
       }
 
-      section {
-        opacity: 0;
-      }
-
-      section:target {
-        opacity: 1;
-      }
-
-      section#home {
-        opacity: 1;
-      }
-
-      section:not(#home):not(:target) *,
-      section:target ~ section#home * {
-        display: none;
-      }
-
-      section:target ~ section#home {
-        opacity: 0;
-      }
-
-      main {
-        flex-grow: 1;
-        position: relative;
-        padding: 1rem;
-        width: 100vw;
-        text-align: left;
-      }
-
-      main::before {
-        content: "\a";
-        height: 0.2rem;
-        width: 100%;
-        position: absolute;
-        background-color: #457b9d;
-        top: -0.2rem;
-        left: 0;
-      }
-
-      h2, p, ul {
-        margin-bottom: 1rem;
+      nav ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
       }
 
       ul li {
         list-style: none;
       }
 
-      a, a:visited {
+      main {
+        flex-grow: 1;
         position: relative;
-        color: #a8dadc;
+        padding: 1rem;
+        width: 100%;
+        text-align: left;
       }
 
-      nav a, nav a:visited {
-        color: #e63946;
+      h2, p, ul {
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      h2 {
+        border-bottom: 0.2rem solid #457b9d;
+        padding-top: 3rem;
+      }
+
+      a, a:visited {
+        position: relative;
+        color: #ffeb00;
+      }
+
+      b {
+        color: #ff6900;
       }
 
       a::before {
@@ -107,7 +107,7 @@
         left: -2rem;
         top: -0.1rem;
         height: 100%;
-        background-color: #a8dadc;
+        background-color: #ffeb00;
         width: 0.5rem;
         clip-path: polygon(0 0, 0 0, 0 0);
         opacity: 0;
@@ -119,10 +119,12 @@
         opacity: 1;
       }
 
+      section {
+        margin-bottom: 3rem;
+      }
+
       @media all and (min-width: 699px)  {
-        main {
-          width: 20rem;
-        }
+
       }
 
     </style>
@@ -133,12 +135,47 @@
       <h1>Hello.</h1>
     </header>
     <nav>
-      <li><a href="#">Home</a></li>
-      <li><a href="#links">Links</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#games">Games</a></li>
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#games">Games</a></li>
+      </ul>
     </nav>
     <main>
+      <section id="intro">
+        <p>
+          Hello, I am Antonio<br>
+          Thank you for visiting my site 😃<br>
+          🏠 From Napoli currently in Milan 🚂<br>
+          I am a developer 👷<br>
+          I enjoy build web stuff 🌍<br>
+          👾 Hobbyist videogame maker / player<br>
+          🕰️ Time traveler<br>
+          ❤️‍ Italian 🍕 japanese 🍙 and greek food<br>
+          🎧 Rock / Punk / Ska music<br>
+          🛡️ House Stark member<br>
+        </p>
+      </section>
+      <section id="profile">
+        <h2>Profile</h2>
+        <p>Software engineer and web developer, passionate about <b>web development</b> and everything around it.</p>
+        <p>10 years experience in web application development, specially <b>frontend development</b> but also backend.</p>
+        <p>Main knowledge are about web technologies: <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>Http</b>, <b>Web API</b>, <b>Accessibility</b></p>
+          <h3>Tools and libraries used often:</h3>
+          <p>
+            <b>JavaScript​:</b> React, Vue/Vuex, jQuery, Redux, Polymer<br>
+            <b>Node.js:</b> npm, Express, Grunt, Gulp, Bower, Webpack<br>
+            <b>Java:</b> Spring Framework, Play Framework.<br>
+            <b>Web API:</b> WebSocket, Canvas, History API, Web Storage, SSE<br>
+            <b>Relational Databases:</b> MySql, DB2, MSSQL.<br>
+            <b>NoSql DB:</b> MongoDB, Redis<br>
+            <b>APIs:</b> rest, web services (Facebook, Google Maps, Twitter)<br>
+            <b>Template Engines:</b> JSP/JSTL, Jade/Pug, Handlebars, Freemarker<br>
+            <b>CSS (and Less/SCSS preprocesors):</b> Flexbox, Grid Layout<br>
+            <b>OS:</b> Linux (Arch, Debian, Ubuntu), Windows <br>
+        </p>
+      </section>
       <section id="resources">
         <h2>Resources</h2>
         <p>Resources for web development</p>
@@ -185,23 +222,10 @@
         <h2>Games</h2>
         <p>Small web games I built</p>
         <ul>
-          <li><a href="http://js13kgames.com/entries/spacefield-league">2017 - Spacefield League</a></li>
-          <li><a href="http://js13kgames.com/entries/breakaway">2013 - Breakaway</a></li>
-          <li><a href="http://js13kgames.com/entries/labyrinth">2012 - Labyrinth</a></li>
+          <li><a href="http://js13kgames.com/entries/spacefield-league">Spacefield League</a></li>
+          <li><a href="http://js13kgames.com/entries/breakaway">Breakaway</a></li>
+          <li><a href="http://js13kgames.com/entries/labyrinth">Labyrinth</a></li>
         </ul>
-      </section>
-      <section id="home">
-        <p>
-          hello, I am Antonio<br>
-          thank you for visiting my site 😃<br>
-          🏠 from Napoli currently in Milan 🚂<br>
-          I am a developer 👷<br>
-          I enjoy build web stuff 🌍<br>
-          👾 hobbyist videogame maker / player<br>
-          ❤️‍ italian 🍕 japanese 🍙 and greek food<br>
-          🎧 rock music<br>
-          🛡️ house Stark member<br>
-        </p>
       </section>
     </main>
   </body>
