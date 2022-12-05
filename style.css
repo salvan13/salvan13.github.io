@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   scrollbar-color: var(--blue) var(--black);
+  scrollbar-width: thin;
 }
 
 :root {
@@ -16,7 +17,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: calc(12px + 0.5vw);
   line-height: 1.4;
-  background: var(--gray);
+  background: var(--blue);
   color: var(--black);
 }
 
@@ -41,8 +42,10 @@ li {
 
 section {
   background-color: var(--white);
-  padding: 0.5rem;
-  box-shadow: 1px 1px 8px 5px lightgrey;
+  padding: 3vw;
+  border: 1vw dashed var(--blue);
+  --clip-size: 1vw;
+  clip-path: polygon(var(--clip-size) 100%, calc(100% - var(--clip-size)) 100%, calc(100% - var(--clip-size)) 0%, var(--clip-size) 0%);
 }
 
 p {
@@ -53,7 +56,6 @@ p {
 header {
   display: flex;
   flex-wrap: wrap;
-  background-color: var(--blue);
   color: var(--white);
   gap: 0.5rem;
 }
@@ -63,6 +65,10 @@ header > a {
   padding: 0.5rem;
   transform: rotate(-2deg) translateX(0.5rem);
   align-self: center;
+}
+
+header h1 {
+  padding: 1vw;
 }
 
 body {
@@ -75,36 +81,13 @@ body {
 }
 
 body > * {
-  padding: 1rem;
+  padding: 3vw;
 }
 
 main {
-  flex-grow: 1;
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;;
-  flex-wrap: wrap;
-  background-color: var(--black);
-  color: var(--white);
-}
-
-footer > * {
-  padding: 0.5rem;
-  font-size: 80%;
-}
-
-footer ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem;
-}
-
-footer li {
-  padding: 0.1rem;
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3vw;
 }
 
 img {
@@ -120,18 +103,10 @@ i {
   color: var(--green);
 }
 
-@media all and (max-width: 699px)  {
-
-  *, *::before, *::after {
-    scrollbar-width: thin;
-  }
+@media all and (max-width: 515px)  {
 
   :root {
     font-size: 16px;
-  }
-
-  main {
-    padding: 0.5rem;
   }
 
   header {
