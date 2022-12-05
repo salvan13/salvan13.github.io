@@ -39,5 +39,13 @@
         </ul>
       </section>
     </main>
+    <script>
+      document.querySelectorAll("section").forEach((s, i) => {
+        setTimeout(() => {
+          s.style.opacity = 1;
+          s.style.setProperty('--clip-size', '0vw');
+        }, i * 1000);
+      });
+    </script>
   </body>
 </html>

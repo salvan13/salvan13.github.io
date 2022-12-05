@@ -43,9 +43,12 @@ li {
 section {
   background-color: var(--white);
   padding: 3vw;
-  border: 1vw dashed var(--blue);
-  --clip-size: 1vw;
+  border-top: 1vw dashed var(--blue);
+  border-bottom: 1vw dashed var(--blue);
+  --clip-size: 15vw;
+  opacity: 0;
   clip-path: polygon(var(--clip-size) 100%, calc(100% - var(--clip-size)) 100%, calc(100% - var(--clip-size)) 0%, var(--clip-size) 0%);
+  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 p {
